@@ -2,13 +2,17 @@ import Vue from 'vue'
 
 import Button from './components/button'
 import AppBar from './components/appBar'
+import VerticalMenu from './components/verticalMenu'
 
-let install = function () {
-    Vue.component(Button.name, Button);
-    Vue.component(AppBar.name, AppBar);
+let install = function (Vue) {
+    Vue.use(Button)
+    Vue.use(AppBar)
+    Vue.use(VerticalMenu)
 }
 
-export default {
+module.exports = {
     install,
-    AppBar
+    AppBar,
+    Button,
+    VerticalMenu
 }

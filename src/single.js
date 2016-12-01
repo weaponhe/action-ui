@@ -3,9 +3,11 @@ import App from './App.vue'
 
 import AppBar from '../dist/appBar'
 import Button from '../dist/button'
+import VerticalMenu from '../dist/verticalMenu'
 
-Vue.component(AppBar.name, AppBar);
-Vue.component(Button.name, Button);
+Vue.use(AppBar)
+Vue.use(Button)
+Vue.use(VerticalMenu)
 
 new Vue({
     el: '#app',

@@ -4,9 +4,11 @@ var webpack = require('webpack')
 module.exports = {
     entry: {
         button: './src/components/button',
+        verticalMenu: './src/components/verticalMenu',
         appBar: './src/components/appBar',
         action: './src/main.js',
-        app: './src/app'
+        single: './src/single',
+        multi: './src/multi'
     },
     output: {
         path: path.resolve(__dirname, './dist'),
