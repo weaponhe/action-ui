@@ -8,7 +8,11 @@ module.exports = {
         appBar: './src/components/appBar',
         tooltip: './src/components/tooltip',
         popup: './src/components/popup',
-        message:'./src/components/message',
+        message: './src/components/message',
+        messageBox: './src/components/messageBox',
+        alert: './src/components/alert',
+        confirm: './src/components/confirm',
+        prompt: './src/components/prompt',
 
         action: './src/main.js',
 

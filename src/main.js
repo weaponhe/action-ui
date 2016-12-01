@@ -1,11 +1,13 @@
-import Vue from 'vue'
-
 import Button from './components/button'
 import AppBar from './components/appBar'
 import VerticalMenu from './components/verticalMenu'
 import Tooltip from './components/tooltip'
 import Popup from './components/popup'
 import Message from './components/message'
+import MessageBox from './components/messageBox'
+import Alert from './components/alert'
+import Confirm from './components/confirm'
+import Prompt from './components/prompt'
 
 let install = function (Vue) {
     Vue.use(Button)
@@ -14,6 +16,10 @@ let install = function (Vue) {
     Vue.use(Tooltip)
     Vue.use(Popup)
     Vue.use(Message)
+    Vue.use(MessageBox)
+    Vue.use(Alert)
+    Vue.use(Confirm)
+    Vue.use(Prompt)
 }
 
 module.exports = {
@@ -23,5 +29,9 @@ module.exports = {
     VerticalMenu,
     Tooltip,
     Popup,
-    Message
+    Message,
+    MessageBox,
+    Alert,
+    Confirm,
+    Prompt
 }
