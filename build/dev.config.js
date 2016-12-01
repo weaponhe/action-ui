@@ -4,7 +4,8 @@ var webpack = require('webpack')
 module.exports = {
   entry: {
     single: './test/single',
-    multi: './test/multi'
+    multi: './test/multi',
+    app: './test/app'
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
