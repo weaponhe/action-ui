@@ -3,6 +3,7 @@ var webpack = require('webpack')
 
 module.exports = {
     entry: {
+        button: './src/components/button',
         appBar: './src/components/appBar',
         action: './src/main.js',
         app: './src/app'
