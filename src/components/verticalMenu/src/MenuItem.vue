@@ -4,13 +4,14 @@
             @click="handleClick"
             :class="{active:isLeaf && active,opened:!isLeaf && active}"
             :style="{paddingLeft:((depth+1)*20)+'px'}">
-          <span v-if="data.icon" class="item-icon">
-          </span>
-            <span>
+      <span v-if="data.icon" class="item-icon">
+        <icon :name="data.icon"></icon>
+      </span>
             {{data.title}}
-        </span>
             <span class="arrow-icon" v-if="!isLeaf">
-         </span>
+        <icon v-if="opened" name="arrow-up"></icon>
+        <icon v-else name="arrow-down"></icon>
+      </span>
         </li>
         <menu-item-list v-if="!isLeaf"
                         v-show="opened"
@@ -21,8 +22,10 @@
 </template>
 
 <script>
+    import Icon from '../../icon'
     export default {
         name: 'menuItem',
+        components: {Icon},
         data() {
             return {
                 active: false

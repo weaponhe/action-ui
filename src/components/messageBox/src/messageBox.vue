@@ -12,8 +12,8 @@
                         <h3 class="clearfix">
                             <span class="title">{{title}}</span>
                             <span v-if="showCloseIcon" class="close" @click="close">
-                <!--<icon name="error" :size="20"></icon>-->
-              </span>
+                                <icon name="error" :size="20"></icon>
+                              </span>
                         </h3>
                     </slot>
                 </div>
@@ -37,7 +37,7 @@
 
 <script>
     import popup from '../../popup'
-    //  import icon from '../../icon'
+    import icon from '../../icon'
     import acButton from '../../button'
     export default {
         name: 'messageBox',

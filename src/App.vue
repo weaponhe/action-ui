@@ -5,7 +5,9 @@
         <tooltip content="left tooltip" direction="bottom">
             <ac-button type="success" @click="open=!open">点击</ac-button>
         </tooltip>
-        <message :open="open">asdasd</message>
+        <message :open="open">
+            <icon name="email"></icon>
+        </message>
 
         <!--<message-box :show="true"-->
         <!--title="提示">-->

@@ -11,6 +11,7 @@ import MessageBox from '../dist/messageBox'
 import Alert from '../dist/alert'
 import Confirm from '../dist/confirm'
 import Prompt from '../dist/prompt'
+import Icon from '../dist/Icon'
 
 Vue.use(AppBar)
 Vue.use(Button)
@@ -22,6 +23,7 @@ Vue.use(MessageBox)
 Vue.use(Alert)
 Vue.use(Confirm)
 Vue.use(Prompt)
+Vue.use(Icon)
 
 new Vue({
     el: '#app',

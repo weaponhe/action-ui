@@ -3,6 +3,7 @@ var webpack = require('webpack')
 
 module.exports = {
     entry: {
+        icon: './src/components/icon',
         button: './src/components/button',
         verticalMenu: './src/components/verticalMenu',
         appBar: './src/components/appBar',
@@ -41,7 +42,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]?[hash]'
