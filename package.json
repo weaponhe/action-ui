@@ -1,9 +1,8 @@
 {
   "name": "action-ui",
-  "description": "A Vue.js project",
-  "version": "1.0.0",
+  "description": "A component library powered by Vue.js",
+  "version": "0.0.1",
   "author": "weapon <weaponhe@126.com>",
-  "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --inline --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
@@ -18,6 +17,8 @@
     "cross-env": "^3.0.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "vue-loader": "^10.0.0",
     "vue-template-compiler": "^2.1.0",
     "webpack": "^2.1.0-beta.25",

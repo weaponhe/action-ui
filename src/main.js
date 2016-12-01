@@ -1,7 +1,12 @@
 import Vue from 'vue'
-import App from './App.vue'
 
-new Vue({
-  el: '#app',
-  render: h => h(App)
-})
+import AppBar from './components/appBar'
+
+let install = function () {
+    Vue.component(AppBar.name, AppBar);
+}
+
+export default {
+    install,
+    AppBar
+}
