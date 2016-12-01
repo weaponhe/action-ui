@@ -93,6 +93,7 @@
         padding-right: 20px;
         font-size: 18px;
         box-sizing: content-box;
+        list-style: none;
 
         &:hover {
             background-color: #475669;
