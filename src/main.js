@@ -5,6 +5,7 @@ import AppBar from './components/appBar'
 import VerticalMenu from './components/verticalMenu'
 import Tooltip from './components/tooltip'
 import Popup from './components/popup'
+import Message from './components/message'
 
 let install = function (Vue) {
     Vue.use(Button)
@@ -12,6 +13,7 @@ let install = function (Vue) {
     Vue.use(VerticalMenu)
     Vue.use(Tooltip)
     Vue.use(Popup)
+    Vue.use(Message)
 }
 
 module.exports = {
@@ -20,5 +22,6 @@ module.exports = {
     Button,
     VerticalMenu,
     Tooltip,
-    Popup
+    Popup,
+    Message
 }

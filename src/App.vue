@@ -3,9 +3,9 @@
         <app-bar></app-bar>
         <vertical-menu :data="navTree"></vertical-menu>
         <tooltip content="left tooltip" direction="bottom">
-            <ac-button type="success">点击</ac-button>
+            <ac-button type="success" @click="open=!open">点击</ac-button>
         </tooltip>
-        <popup open modal></popup>
+        <message :open="open">asdasd</message>
     </div>
 </template>
 
@@ -60,7 +60,8 @@
         name: 'app',
         data () {
             return {
-                navTree
+                navTree,
+                open: false
             }
         }
     }
