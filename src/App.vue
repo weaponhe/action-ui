@@ -5,6 +5,7 @@
         <tooltip content="left tooltip" direction="bottom">
             <ac-button type="success">点击</ac-button>
         </tooltip>
+        <popup open modal></popup>
     </div>
 </template>
 
