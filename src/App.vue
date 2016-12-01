@@ -2,7 +2,9 @@
     <div id="app">
         <app-bar></app-bar>
         <vertical-menu :data="navTree"></vertical-menu>
-        <ac-button type="success">点击</ac-button>
+        <tooltip content="left tooltip" direction="bottom">
+            <ac-button type="success">点击</ac-button>
+        </tooltip>
     </div>
 </template>
 

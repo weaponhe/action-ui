@@ -6,6 +6,7 @@ module.exports = {
         button: './src/components/button',
         verticalMenu: './src/components/verticalMenu',
         appBar: './src/components/appBar',
+        tooltip: './src/components/tooltip',
         action: './src/main.js',
         single: './src/single',
         multi: './src/multi'
