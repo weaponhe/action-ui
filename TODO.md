@@ -5,7 +5,8 @@
 - [ok] popup
 - [ok] button
 - [ok] message
-- [ok] message-box
+- [ok] message-box : alert, confirm, prompt
+
 - input
 - progress
 - dropdown

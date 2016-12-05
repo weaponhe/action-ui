@@ -34,7 +34,8 @@
     }
 </script>
 
-<style scoped>
+<style scoped rel="stylesheet/less" lang="less">
+
     .menu {
         height: 100%;
         user-select: none;
@@ -46,7 +47,4 @@
         color: #c0ccda;
     }
 
-    .theme-light {
-
-    }
 </style>

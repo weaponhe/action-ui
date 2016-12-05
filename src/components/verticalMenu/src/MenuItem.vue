@@ -85,7 +85,7 @@
     }
 </script>
 
-<style rel="stylesheet/less" lang="less">
+<style scoped rel="stylesheet/less" lang="less">
     .menu-item {
         position: relative;
         line-height: 55px;
