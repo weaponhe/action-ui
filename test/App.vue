@@ -4,20 +4,27 @@
         <vertical-menu :data="navTree"></vertical-menu>
         <tooltip content="left tooltip" direction="bottom">
             <ac-button type="success" @click="open=!open">点击</ac-button>
+            <ac-button type="success" disabled @click="open=!open">点击</ac-button>
         </tooltip>
         <message :open="open">
             <icon name="email"></icon>
         </message>
-
-        <!--<message-box :show="true"-->
-        <!--title="提示">-->
-        <!--</message-box>-->
 
         <div class="main">
             <ac-button @click="alertShow=true">Alert</ac-button>
             <ac-button @click="confirmShow=true">Confirm</ac-button>
             <ac-button @click="promptShow=true">Promot</ac-button>
         </div>
+
+        <ac-input size="mini"/>
+        <ac-input size="small"/>
+        <ac-input/>
+        <ac-input size="large"/>
+    
+        <ac-input placeholder="请输入" v-model="message"/>
+        <div>message : {{message}}</div>
+
+        <!--Message-box-->
         <alert
                 :show="alertShow"
                 @ok="alertOK"
@@ -95,7 +102,8 @@
                 open: false,
                 alertShow: false,
                 confirmShow: false,
-                promptShow: false
+                promptShow: false,
+                message: 'asdasd'
             }
         },
         methods: {

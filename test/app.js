@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 
-import Action from '../src/main'
+import Action from '../src/main.js'
 
 Vue.use(Action)
 
