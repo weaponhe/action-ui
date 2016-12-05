@@ -20,7 +20,7 @@
         <ac-input size="small"/>
         <ac-input/>
         <ac-input size="large"/>
-    
+
         <ac-input placeholder="请输入" v-model="message"/>
         <div>message : {{message}}</div>
 

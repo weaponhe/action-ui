@@ -5,15 +5,18 @@
                  @ok="ok">
 
         <slot></slot>
-        <div class="input"><input type="text" v-model="input"></div>
+        <div class="input">
+            <ac-input v-model="input"></ac-input>
+        </div>
     </message-box>
 </template>
 
 <script>
     import MessageBox from '../../messageBox'
+    import Input from '../../input'
     export default {
         name: 'prompt',
-        components: [MessageBox],
+        components: [MessageBox, Input],
         data(){
             return {
                 input: ''

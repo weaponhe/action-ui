@@ -9,7 +9,7 @@
 
                 <div class="header">
                     <slot name="header">
-                        <h3 class="clearfix">
+                        <h3>
                             <span class="title">{{title}}</span>
                             <span v-if="showCloseIcon" class="close" @click="close">
                                 <icon name="error" :size="20"></icon>
@@ -82,7 +82,7 @@
             margin: 20px 0;
             padding: 0 20px;
             .title {
-                float: left;
+                /*float: left;*/
                 color: #42b983;
             }
             .close {

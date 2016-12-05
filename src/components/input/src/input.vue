@@ -43,7 +43,7 @@
 
 <style scoped lang="less" rel="stylesheet/less">
     .wrapper {
-        margin: 10px;
+        margin: 10px 0;
     }
 
     input {
