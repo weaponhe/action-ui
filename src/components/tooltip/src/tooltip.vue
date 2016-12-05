@@ -63,7 +63,6 @@
   .tooltip {
     display: inline-block;
     position: relative;
-    z-index: 1000000;
   }
 
   .tooltip-rel {
@@ -74,6 +73,7 @@
     position: absolute;
     padding: 7px;
     border-radius: 3px;
+    z-index: 1000000;
   }
 
   .theme-dark {
