@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
     entry: {
@@ -18,7 +19,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/dist/',
+        // publicPath: '/dist/',
         filename: '[name].js',
         library: '[name]',
         libraryTarget: 'umd'
@@ -28,7 +29,12 @@ module.exports = {
             test: /\.vue$/,
             loader: 'vue-loader',
             options: {
-                // vue-loader options go here
+                loaders: {
+                    css: ExtractTextPlugin.extract({
+                        loader: 'css-loader',
+                        fallbackLoader: 'vue-style-loader'
+                    })
+                }
             }
         }, {
             test: /\.js$/,
@@ -38,7 +44,7 @@ module.exports = {
             test: /\.(png|jpg|gif|svg|eot|ttf|woff)$/,
             loader: 'file-loader',
             options: {
-                name: '[name].[ext]?[hash]'
+                name: '[name].[ext]'
             }
         }]
     },
@@ -51,12 +57,15 @@ module.exports = {
         historyApiFallback: true,
         noInfo: true
     },
-    devtool: '#eval-source-map'
+    devtool: '#eval-source-map',
+    plugins: [
+        new ExtractTextPlugin("style.css")
+    ]
 }
 
 if (process.env.NODE_ENV === 'production') {
     module.exports.devtool = '#source-map'
-        // http://vue-loader.vuejs.org/en/workflow/production.html
+    // http://vue-loader.vuejs.org/en/workflow/production.html
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
             'process.env': {
