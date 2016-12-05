@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "author": "weapon <weaponhe@126.com>",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/dev.config.js --open --inline --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/dev.config.js --progress  --open --inline --hot",
+    "test": "cross-env NODE_ENV=development webpack --config ./build/dev.config.js --progress --hide-modules",
     "build": "cross-env NODE_ENV=production webpack --config ./build/build.config.js --progress --hide-modules"
   },
   "main": "./dist/action.js",

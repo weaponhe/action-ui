@@ -9,6 +9,7 @@ import Alert from './components/alert'
 import Confirm from './components/confirm'
 import Prompt from './components/prompt'
 import Icon from './components/icon'
+import Input from './components/input'
 
 let install = function (Vue) {
     Vue.use(Button)
@@ -22,6 +23,7 @@ let install = function (Vue) {
     Vue.use(Confirm)
     Vue.use(Prompt)
     Vue.use(Icon)
+    Vue.use(Input)
 }
 
 module.exports = {
@@ -36,5 +38,6 @@ module.exports = {
     Alert,
     Confirm,
     Prompt,
-    Icon
+    Icon,
+    Input
 }
