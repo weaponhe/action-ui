@@ -6,11 +6,12 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/dev.config.js --progress  --open --inline --hot",
     "test": "cross-env NODE_ENV=development webpack --config ./build/dev.config.js --progress --hide-modules",
-    "build": "cross-env NODE_ENV=production webpack --config ./build/build.config.js --progress --hide-modules"
+    "build": "cross-env NODE_ENV=production webpack --config ./build/build.config.js --progress --hide-modules --watch"
   },
   "main": "./dist/action.js",
   "dependencies": {
-    "vue": "^2.1.0"
+    "vue": "^2.1.0",
+    "vue-router": "^2.1.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
