@@ -1,16 +1,14 @@
 <template>
     <div class="menu-item-list">
-        <menu-item v-for="item in data"
-                   :data="item">
-        </menu-item>
+        <slot></slot>
     </div>
 </template>
 
 <script>
     export default {
         name: 'MenuItemList',
-        props: {
-            data: Array
+        mounted(){
+            console.log('Mounted')
         }
     }
 </script>

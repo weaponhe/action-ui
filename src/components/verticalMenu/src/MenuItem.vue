@@ -1,24 +1,24 @@
 <template>
     <div>
-        <div :is="container"
-             :to="data.path"
-             class="container">
-            <div class="menu-item"
-                 @click="handleClick"
-                 :class="{active:isLeaf && active,opened:!isLeaf && active}"
-                 :style="{ paddingLeft: ((depth + 1) * 20) + 'px'}">
+        <!--<div :is="container"-->
+        <!--:to="data.path"-->
+        <!--class="container">-->
+        <div class="menu-item"
+             @click="handleClick"
+             :class="{active:isLeaf && active,opened:!isLeaf && active}"
+             :style="{ paddingLeft: ((depth + 1) * 20) + 'px'}">
           <span v-if="data.icon" class="item-icon">
             <icon :name="data.icon"></icon>
           </span>
-                <span>
+            <span>
                {{data.title}}-{{depth}}-{{isLeaf?'leaf':'internal'}}
            </span>
-                <span class="arrow-icon" v-if="!isLeaf">
+            <span class="arrow-icon" v-if="!isLeaf">
             <icon v-if="opened" name="arrow-up"></icon>
             <icon v-else name="arrow-down"></icon>
             </span>
-            </div>
         </div>
+        <!--</div>-->
 
         <div v-if="!isLeaf" v-show="opened" :style="{backgroundColor:'rgba(5,5,5,' + 0.2*depth + ')'}">
             <slot></slot>
@@ -34,7 +34,10 @@
         components: {Icon},
         props: {
             data: Object,
-            vueRouter: Boolean
+            vueRouter: {
+                type: Boolean,
+                default: true
+            }
         },
         data() {
             return {
@@ -89,6 +92,7 @@
             }
         },
         mounted(){
+            console.log('---', this.data)
             this.isLeaf = !(this.$slots && this.$slots.default)
             if (this.isLeaf) {
                 this.index = this.root.leafList.length
