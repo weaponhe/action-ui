@@ -9,11 +9,10 @@
 </template>
 
 <script>
-    import mixin from '../../popup-mixin'
-
+    import mixin from '../../mixin'
     export default {
         name: 'popup',
-        mixins: [mixin],
+        mixins: [mixin.PopupMixin],
         props: {
             closeOnClickModal: {
                 type: Boolean,

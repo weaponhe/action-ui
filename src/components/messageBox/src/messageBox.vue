@@ -1,7 +1,7 @@
 <template>
     <transition name="popup">
-        <popup v-if="show"
-               :open="show"
+        <popup v-if="vModelValue"
+               :open="vModelValue"
                modal
                @close="close">
 
@@ -39,20 +39,13 @@
     import popup from '../../popup'
     import icon from '../../icon'
     import acButton from '../../button'
+    import mixin from '../../mixin'
+    
     export default {
         name: 'messageBox',
+        mixins:[mixin.ModelMixin],
         components: {popup, acButton},
-        data(){
-            return {
-                show:false
-            }
-        },
         props: {
-            value:Boolean,
-            // show: {
-            //     type: Boolean,
-            //     default: false
-            // },
             title: String,
             showCloseIcon: {
                 type: Boolean,
@@ -63,21 +56,13 @@
                 default: true
             }
         },
-        watch:{
-            value(val){
-                this.show = val
-            },
-            show(val){
-                this.$emit('input',val)
-            }
-        },
         methods: {
             ok(){
                 this.$emit('ok')
-                this.show=false
+                this.vModelValue=false
             },
             close(){
-                this.show=false
+                this.vModelValue=false
                 this.$emit('close')
             }
         }

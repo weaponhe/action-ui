@@ -10,10 +10,10 @@
 </template>
 
 <script>
-  import mixin from '../../popup-mixin'
+  import mixin from '../../mixin'
   export default {
     name: 'message',
-    mixins: [mixin],
+    mixins: [mixin.PopupMixin],
     props: {
       type: {
         type: String,
