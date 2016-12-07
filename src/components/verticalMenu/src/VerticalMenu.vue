@@ -1,6 +1,6 @@
 <template>
     <div class="menu" :class="'theme-'+theme">
-        <menu-item-list :data="data"></menu-item-list>
+        <slot></slot>
     </div>
 </template>
 
@@ -15,11 +15,11 @@
             }
         },
         props: {
-            data: Array,
             theme: {
                 type: String,
                 default: 'dark'
-            }
+            },
+            vueRouter: Boolean
         },
         methods: {
             changeActiveIndex(newActiveIndex){
@@ -27,14 +27,12 @@
                 this.leafList[newActiveIndex].active = true;
                 this.activeLeaf = newActiveIndex;
             }
-        },
-        mounted(){
-
         }
     }
 </script>
 
-<style scoped>
+<style scoped rel="stylesheet/less" lang="less">
+
     .menu {
         height: 100%;
         user-select: none;
@@ -46,7 +44,4 @@
         color: #c0ccda;
     }
 
-    .theme-light {
-
-    }
 </style>
