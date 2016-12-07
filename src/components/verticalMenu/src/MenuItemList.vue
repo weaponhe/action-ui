@@ -6,10 +6,7 @@
 
 <script>
     export default {
-        name: 'MenuItemList',
-        mounted(){
-            console.log('Mounted')
-        }
+        name: 'MenuItemList'
     }
 </script>
 

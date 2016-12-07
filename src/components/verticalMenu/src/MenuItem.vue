@@ -92,7 +92,6 @@
             }
         },
         mounted(){
-            console.log('---', this.data)
             this.isLeaf = !(this.$slots && this.$slots.default)
             if (this.isLeaf) {
                 this.index = this.root.leafList.length
