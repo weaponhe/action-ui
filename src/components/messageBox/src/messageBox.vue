@@ -42,11 +42,17 @@
     export default {
         name: 'messageBox',
         components: {popup, acButton},
+        data(){
+            return {
+                show:false
+            }
+        },
         props: {
-            show: {
-                type: Boolean,
-                default: false
-            },
+            value:Boolean,
+            // show: {
+            //     type: Boolean,
+            //     default: false
+            // },
             title: String,
             showCloseIcon: {
                 type: Boolean,
@@ -57,11 +63,21 @@
                 default: true
             }
         },
+        watch:{
+            value(val){
+                this.show = val
+            },
+            show(val){
+                this.$emit('input',val)
+            }
+        },
         methods: {
             ok(){
                 this.$emit('ok')
+                this.show=false
             },
             close(){
+                this.show=false
                 this.$emit('close')
             }
         }
