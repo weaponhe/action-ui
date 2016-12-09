@@ -4,19 +4,15 @@
                :disabled="disabled"
                :placeholder="placeholder"
                :class="{['size-'+size]:size}"
-               v-model="inputValue"
-        >
+               v-model="vModelValue">
     </div>
 </template>
 
 <script>
+    import mixin from '../../mixin'
     export default {
         name: 'acInput',
-        data(){
-            return {
-                inputValue: this.value
-            }
-        },
+        mixins: [mixin.ModelMixin],
         props: {
             disabled: Boolean,
             size: {
@@ -28,15 +24,6 @@
                 }
             },
             placeholder: String,
-            value: [String, Number]
-        },
-        watch: {
-            value(val){
-                this.inputValue = val
-            },
-            inputValue(val){
-                this.$emit('input', val)
-            }
         }
     }
 </script>

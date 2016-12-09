@@ -11,7 +11,7 @@
             <icon :name="data.icon"></icon>
           </span>
             <span>
-               {{data.title}}-{{depth}}-{{isLeaf?'leaf':'internal'}}
+               {{data.title}}
            </span>
             <span class="arrow-icon" v-if="!isLeaf">
             <icon v-if="opened" name="arrow-up"></icon>

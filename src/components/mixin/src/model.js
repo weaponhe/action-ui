@@ -1,18 +1,16 @@
 module.exports = {
-  data() {
-    return {
-      vModelValue: undefined
-    }
-  },
-  props: {
-    value: [Boolean, String, Number]
-  },
-  watch: {
-    value(val) {
-      this.vModelValue = val
+    data() {
+        return {
+            vModelValue: this.value
+        }
     },
-    vModelValue(val) {
-      this.$emit('input', val)
+    props: ['value'],
+    watch: {
+        value(val) {
+            this.vModelValue = val
+        },
+        vModelValue(val) {
+            this.$emit('input', val)
+        }
     }
-  }
 }
