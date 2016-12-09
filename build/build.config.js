@@ -15,6 +15,8 @@ module.exports = {
         alert: './src/components/alert',
         confirm: './src/components/confirm',
         prompt: './src/components/prompt',
+        mixin: './src/components/mixin',
+
         action: './src/main.js',
     },
     output: {
