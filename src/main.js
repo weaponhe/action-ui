@@ -10,6 +10,7 @@ import Confirm from './components/confirm'
 import Prompt from './components/prompt'
 import Icon from './components/icon'
 import Input from './components/input'
+import Checkbox from './components/checkbox'
 
 let install = function (Vue) {
     Vue.use(Button)
@@ -24,6 +25,7 @@ let install = function (Vue) {
     Vue.use(Prompt)
     Vue.use(Icon)
     Vue.use(Input)
+    Vue.use(Checkbox)
 }
 
 module.exports = {
@@ -39,5 +41,6 @@ module.exports = {
     Confirm,
     Prompt,
     Icon,
-    Input
+    Input,
+    Checkbox
 }
