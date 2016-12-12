@@ -11,6 +11,7 @@ import Prompt from './components/prompt'
 import Icon from './components/icon'
 import Input from './components/input'
 import Checkbox from './components/checkbox'
+import Select from './components/select'
 
 let install = function (Vue) {
     Vue.use(Button)
@@ -26,6 +27,7 @@ let install = function (Vue) {
     Vue.use(Icon)
     Vue.use(Input)
     Vue.use(Checkbox)
+    Vue.use(Select)
 }
 
 module.exports = {
@@ -42,5 +44,6 @@ module.exports = {
     Prompt,
     Icon,
     Input,
-    Checkbox
+    Checkbox,
+    Select
 }
