@@ -1,5 +1,5 @@
 <template>
-    <div class="menu" :class="'theme-'+theme">
+    <div class="menu" :class="['theme-'+theme,{activeShow}]" >
         <slot></slot>
     </div>
 </template>
@@ -19,7 +19,11 @@
                 type: String,
                 default: 'dark'
             },
-            vueRouter: Boolean
+//            vueRouter: Boolean
+            activeShow: {
+                type: Boolean,
+                default: true
+            }
         },
         methods: {
             changeActiveIndex(newActiveIndex){
@@ -40,8 +44,8 @@
     }
 
     .theme-dark {
-        background-color: #1f2f3d;
-        color: #c0ccda;
+        /*background-color: #1f2f3d;*/
+        /*color: #c0ccda;*/
     }
 
 </style>

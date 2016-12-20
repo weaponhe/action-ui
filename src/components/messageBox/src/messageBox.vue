@@ -25,7 +25,7 @@
 
                 <div class="footer">
                     <slot name="footer">
-                        <ac-button type="success" @click="ok">确定</ac-button>
+                        <ac-button v-if="showOKButton" type="success" @click="ok">确定</ac-button>
                         <ac-button v-if="showCancelButton" @click="close">取消</ac-button>
                     </slot>
                 </div>
@@ -40,10 +40,10 @@
     import icon from '../../icon'
     import acButton from '../../button'
     import mixin from '../../mixin'
-    
+
     export default {
         name: 'messageBox',
-        mixins:[mixin.ModelMixin],
+        mixins: [mixin.ModelMixin],
         components: {popup, acButton},
         props: {
             title: String,
@@ -54,15 +54,19 @@
             showCancelButton: {
                 type: Boolean,
                 default: true
+            },
+            showOKButton: {
+                type: Boolean,
+                default: true
             }
         },
         methods: {
             ok(){
                 this.$emit('ok')
-                this.vModelValue=false
+                this.vModelValue = false
             },
             close(){
-                this.vModelValue=false
+                this.vModelValue = false
                 this.$emit('close')
             }
         }

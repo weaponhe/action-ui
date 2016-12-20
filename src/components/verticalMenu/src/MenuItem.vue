@@ -34,16 +34,16 @@
         components: {Icon},
         props: {
             data: Object,
-            vueRouter: {
-                type: Boolean,
-                default: true
-            }
+//            vueRouter: {
+//                type: Boolean,
+//                default: true
+//            }
         },
         data() {
             return {
                 active: false,
                 isLeaf: true,
-                container: this.vueRouter ? 'router-link' : 'div'
+//                container: this.vueRouter ? 'router-link' : 'div'
             }
         },
         computed: {
@@ -109,7 +109,7 @@
 
 <style scoped rel="stylesheet/less" lang="less">
     .container {
-        color: #CCC;
+        /*color: #CCC;*/
         text-decoration: none;
     }
 
@@ -125,9 +125,9 @@
         transition: color .2s cubic-bezier(.645, .045, .355, 1);
 
         &:hover {
-            background-color: #475669;
+            background-color: rgba(0,0,0,0.1);
         }
-        &.active {
+        .activeShow &.active {
             color: #03a9f4;
         }
         .arrow-icon {
