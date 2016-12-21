@@ -12,6 +12,7 @@
         name: 'AcCheckbox',
         mixins: [mixin.ModelMixin],
         props: {
+            title: String,
             size: {
                 type: String,
                 default: 'default',
@@ -27,7 +28,16 @@
             clickLabel(){
                 this.vModelValue = !this.vModelValue
             }
-        }
+        },
+//        beforeUpdate(){
+//            console.log('checkbox beforeUpdate is called:', this.title, "value=", this.value, "vModelValue=", this.vModelValue, 'instance[uid]=', this._uid)
+//        },
+//        updated(){
+//            console.log('checkbox updated is called:', this.title, "value=", this.value, "vModelValue=", this.vModelValue, 'instance=[uid]', this._uid)
+//        },
+//        created(){
+//            console.log(this.title, 'instance[uid]=', this._uid)
+//        }
     }
 </script>
 
@@ -56,7 +66,7 @@
             border: 1px solid #ddd;
 
             &:after {
-                opacity: 0.1;
+                opacity: 0;
                 content: '';
                 position: absolute;
                 background: transparent;

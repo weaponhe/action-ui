@@ -109,7 +109,6 @@
 
 <style scoped rel="stylesheet/less" lang="less">
     .container {
-        /*color: #CCC;*/
         text-decoration: none;
     }
 
