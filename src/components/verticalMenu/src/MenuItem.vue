@@ -1,6 +1,6 @@
 <template scope="props">
     <a class="menu-item"
-       :is="router?'router-link':'a'" :to="path" :href="'#'+path">
+       :is="router?'router-link':'a'" :to="path" :href="'#'+path" exact>
         {{title}}
     </a>
 </template>
