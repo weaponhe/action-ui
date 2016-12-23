@@ -78,7 +78,7 @@
         text-decoration: none;
         box-sizing: border-box;
         list-style: none;
-        transition: color .2s cubic-bezier(.645, .045, .355, 1);
+        transition: color .2s cubic-bezier(.645, .045, .355, 1), border-color .2s cubic-bezier(.645, .045, .355, 1);
         border-left: 5px solid transparent;
 
         &:hover {
@@ -87,7 +87,7 @@
     }
 
     .router-link-active {
-        border-left: 5px solid #4fc08d;
+        border-color: #4fc08d;
         color: #4fc08d;
     }
 </style>
