@@ -7,7 +7,7 @@
 
 <script>
   export default {
-    name: 'verticalMenu',
+    name: 'VMenu',
     props: {
       router: {
         type: Boolean,

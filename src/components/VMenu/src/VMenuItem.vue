@@ -20,7 +20,7 @@
 <script>
   import Icon from '../../icon'
   export default {
-    name: 'menuItem',
+    name: 'VMenuItem',
     components: {Icon},
     props: {
       title: String,
@@ -32,7 +32,7 @@
       root(){
         //保存verticalMenu节点
         let parent = this.$parent
-        while (parent && parent.$options.name !== 'verticalMenu') {
+        while (parent && parent.$options.name !== 'VMenu') {
           parent = parent.$parent
         }
         return parent

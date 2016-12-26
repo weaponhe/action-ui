@@ -1,38 +1,31 @@
 <template>
     <div class="menu-group">
-        <menu-item :title="title"
-                   :path="path"
-                   :expandable="expandable"
-                   :expanded="expanded"
-                   @expand="expanded = !expanded">
+        <v-menu-item :title="title"
+                     :path="path"
+                     :expandable="true"
+                     :expanded="expanded"
+                     @expand="expanded = !expanded">
 
-        </menu-item>
-        <transition name="slide">
-            <div class="child-menu-list" v-show="expanded">
-                <slot></slot>
-            </div>
-        </transition>
+        </v-menu-item>
+        <div class="child-menu-list" v-show="expanded">
+            <slot></slot>
+        </div>
     </div>
 </template>
 
 <script>
-  import MenuItem from './MenuItem.vue'
+  import VMenuItem from './VMenuItem.vue'
   export default {
-    name: 'menuGroup',
-    components: {MenuItem},
+    name: 'VMenuGroup',
+    components: {VMenuItem},
     data(){
       return {
-        expandable: false,
         expanded: true
       }
     },
     props: {
       title: String,
       path: [String, Object]
-    },
-    mounted(){
-      console.log(!!this.$slots.default)
-      this.expandable = !!this.$slots.default
     }
 //    data() {
 //      return {
@@ -48,7 +41,7 @@
 //      root(){
 //        //保存verticalMenu节点
 //        let parent = this.$parent
-//        while (parent && parent.$options.name !== 'verticalMenu') {
+//        while (parent && parent.$options.name !== 'VMenu') {
 //          parent = parent.$parent
 //        }
 //        return parent
@@ -56,7 +49,7 @@
 //      depth(){
 //        let count  = 0
 //        let parent = this.$parent
-//        while (parent && parent.$options.name !== 'verticalMenu') {
+//        while (parent && parent.$options.name !== 'VMenu') {
 //          parent.$options.name === 'menuItem' && count++
 //          parent = parent.$parent
 //        }
@@ -107,17 +100,7 @@
     .menu-group {
         .child-menu-list {
             text-indent: .8em;
-            transform-origin: top left;
         }
     }
 
-    .slide-enter-active, .slide-leave-active {
-        transition: margin-top .2s ease, opacity .1s ease;
-
-    }
-
-    .slide-enter, .slide-leave-active {
-        opacity: 0;
-        margin-top: -35px;
-    }
 </style>

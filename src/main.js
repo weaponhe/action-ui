@@ -1,6 +1,6 @@
 import Button from './components/button'
 import AppBar from './components/appBar'
-import VerticalMenu from './components/verticalMenu'
+import VMenu from './components/VMenu'
 import Tooltip from './components/tooltip'
 import Popup from './components/popup'
 import Message from './components/message'
@@ -13,37 +13,38 @@ import Input from './components/input'
 import Checkbox from './components/checkbox'
 import Select from './components/select'
 
-let install = function (Vue) {
-    Vue.use(Button)
-    Vue.use(AppBar)
-    Vue.use(VerticalMenu)
-    Vue.use(Tooltip)
-    Vue.use(Popup)
-    Vue.use(Message)
-    Vue.use(MessageBox)
-    Vue.use(Alert)
-    Vue.use(Confirm)
-    Vue.use(Prompt)
-    Vue.use(Icon)
-    Vue.use(Input)
-    Vue.use(Checkbox)
-    Vue.use(Select)
+let install = function (Vue)
+{
+  Vue.use(Button)
+  Vue.use(AppBar)
+  Vue.use(VMenu)
+  Vue.use(Tooltip)
+  Vue.use(Popup)
+  Vue.use(Message)
+  Vue.use(MessageBox)
+  Vue.use(Alert)
+  Vue.use(Confirm)
+  Vue.use(Prompt)
+  Vue.use(Icon)
+  Vue.use(Input)
+  Vue.use(Checkbox)
+  Vue.use(Select)
 }
 
 module.exports = {
-    install,
-    AppBar,
-    Button,
-    VerticalMenu,
-    Tooltip,
-    Popup,
-    Message,
-    MessageBox,
-    Alert,
-    Confirm,
-    Prompt,
-    Icon,
-    Input,
-    Checkbox,
-    Select
+  install,
+  AppBar,
+  Button,
+  VMenu,
+  Tooltip,
+  Popup,
+  Message,
+  MessageBox,
+  Alert,
+  Confirm,
+  Prompt,
+  Icon,
+  Input,
+  Checkbox,
+  Select
 }
