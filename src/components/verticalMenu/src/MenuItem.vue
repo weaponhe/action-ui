@@ -1,21 +1,34 @@
 <template scope="props">
-    <a class="menu-item"
-       :is="router?'router-link':'a'" :to="path" :href="'#'+path" exact>
-        {{title}}
-    </a>
+    <div class="menu-item"
+         :class="{disable:path===undefined}"
+         :is="tag"
+         :to="path"
+         :href="'#'+path?path:''"
+         exact>
+        <span v-if="expandable"
+              @click="$emit('expand')">
+            <icon name="arrow-right"
+                  :size="12"
+                  class="icon-arrow"
+                  :class="{expanded}">
+            </icon>
+        </span>
+        <span>{{title}}</span>
+    </div>
 </template>
 
 <script>
+  import Icon from '../../icon'
   export default {
     name: 'menuItem',
+    components: {Icon},
     props: {
       title: String,
       path: [String, Object],
+      expandable: Boolean,
+      expanded: Boolean
     },
     computed: {
-//            opened(){
-//                return !this.isLeaf && this.active
-//            },
       root(){
         //保存verticalMenu节点
         let parent = this.$parent
@@ -26,8 +39,11 @@
       },
       router(){
         return this.root.router
+      },
+      tag(){
+        return this.path ? this.router ? 'router-link' : 'a' : 'div'
       }
-    },
+    }
 //    watch: {
 //      active(newActive){
 //        if (newActive) {
@@ -71,23 +87,36 @@
 
     .menu-item {
         display: block;
-        line-height: 45px;
-        cursor: pointer;
-        padding: 0 1em;
+        line-height: 35px;
+        padding: 0 1.5em 0 2em;
         font-size: 15px;
         text-decoration: none;
         box-sizing: border-box;
-        list-style: none;
-        transition: color .2s cubic-bezier(.645, .045, .355, 1), border-color .2s cubic-bezier(.645, .045, .355, 1);
+        transition: color .2s ease, border-color .2s ease;
         border-left: 5px solid transparent;
+        cursor: default;
+        color: #555;
 
-        &:hover {
-            background-color: rgba(0, 0, 0, 0.1);
+        &:not(.disable):hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        &.router-link-active {
+            border-color: #4fc08d;
+            color: #4fc08d;
+        }
+        .icon-arrow {
+            float: left;
+            width: 2em;
+            text-align: center;
+            cursor: pointer;
+            margin-left: -2em;
+            transition: transform .2s ease;
+            &.expanded {
+                display: inline-block;
+                transform: rotate(90deg);
+            }
         }
     }
 
-    .router-link-active {
-        border-color: #4fc08d;
-        color: #4fc08d;
-    }
 </style>

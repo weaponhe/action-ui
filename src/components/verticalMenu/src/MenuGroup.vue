@@ -1,9 +1,17 @@
 <template>
     <div class="menu-group">
-        <menu-item :title="title" :path="path"></menu-item>
-        <div class="child-menu-list">
-            <slot></slot>
-        </div>
+        <menu-item :title="title"
+                   :path="path"
+                   :expandable="expandable"
+                   :expanded="expanded"
+                   @expand="expanded = !expanded">
+
+        </menu-item>
+        <transition name="slide">
+            <div class="child-menu-list" v-show="expanded">
+                <slot></slot>
+            </div>
+        </transition>
     </div>
 </template>
 
@@ -12,13 +20,19 @@
   export default {
     name: 'menuGroup',
     components: {MenuItem},
+    data(){
+      return {
+        expandable: false,
+        expanded: true
+      }
+    },
     props: {
       title: String,
-      path: [String, Object],
-//      expandable: {
-//        type: Boolean,
-//        default: true
-//      }
+      path: [String, Object]
+    },
+    mounted(){
+      console.log(!!this.$slots.default)
+      this.expandable = !!this.$slots.default
     }
 //    data() {
 //      return {
@@ -92,7 +106,18 @@
 
     .menu-group {
         .child-menu-list {
-            text-indent: 1em;
+            text-indent: .8em;
+            transform-origin: top left;
         }
+    }
+
+    .slide-enter-active, .slide-leave-active {
+        transition: margin-top .2s ease, opacity .1s ease;
+
+    }
+
+    .slide-enter, .slide-leave-active {
+        opacity: 0;
+        margin-top: -35px;
     }
 </style>
