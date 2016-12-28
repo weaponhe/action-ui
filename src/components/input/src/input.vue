@@ -1,31 +1,37 @@
 <template>
     <div class="wrapper">
-        <input type='text'
+        <input :type='type'
                :disabled="disabled"
                :placeholder="placeholder"
                :class="{['size-'+size]:size}"
-               v-model="vModelValue">
+               v-model="vModelValue"
+               :autofocus="autofocus">
     </div>
 </template>
 
 <script>
-    import mixin from '../../mixin'
-    export default {
-        name: 'acInput',
-        mixins: [mixin.ModelMixin],
-        props: {
-            disabled: Boolean,
-            size: {
-                type: String,
-                validator(value){
-                    return value === 'large' ||
-                        value === 'small' ||
-                        value === 'mini'
-                }
-            },
-            placeholder: String,
+  import mixin from '../../mixin'
+  export default {
+    name: 'acInput',
+    mixins: [mixin.ModelMixin],
+    props: {
+      disabled: Boolean,
+      size: {
+        type: String,
+        validator(value){
+          return value === 'large' ||
+            value === 'small' ||
+            value === 'mini'
         }
+      },
+      type: {
+        type: String,
+        default: 'text'
+      },
+      placeholder: String,
+      autofocus: Boolean
     }
+  }
 </script>
 
 <style scoped lang="less" rel="stylesheet/less">

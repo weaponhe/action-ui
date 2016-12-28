@@ -36,41 +36,41 @@
 </template>
 
 <script>
-    import popup from '../../popup'
-    import icon from '../../icon'
-    import acButton from '../../button'
-    import mixin from '../../mixin'
+  import popup from '../../popup'
+  import icon from '../../icon'
+  import acButton from '../../button'
+  import mixin from '../../mixin'
 
-    export default {
-        name: 'messageBox',
-        mixins: [mixin.ModelMixin],
-        components: {popup, acButton},
-        props: {
-            title: String,
-            showCloseIcon: {
-                type: Boolean,
-                default: true
-            },
-            showCancelButton: {
-                type: Boolean,
-                default: true
-            },
-            showOKButton: {
-                type: Boolean,
-                default: true
-            }
-        },
-        methods: {
-            ok(){
-                this.$emit('ok')
-                this.vModelValue = false
-            },
-            close(){
-                this.vModelValue = false
-                this.$emit('close')
-            }
-        }
+  export default {
+    name: 'messageBox',
+    mixins: [mixin.ModelMixin],
+    components: {popup, acButton},
+    props: {
+      title: String,
+      showCloseIcon: {
+        type: Boolean,
+        default: true
+      },
+      showCancelButton: {
+        type: Boolean,
+        default: true
+      },
+      showOKButton: {
+        type: Boolean,
+        default: true
+      }
+    },
+    methods: {
+      ok(){
+        this.$emit('ok')
+        this.vModelValue = false
+      },
+      close(){
+        this.vModelValue = false
+        this.$emit('close')
+      }
     }
+  }
 </script>
 
 <style scoped lang="less" rel="stylesheet/less">
@@ -111,7 +111,7 @@
     }
 
     .popup-enter-active, .popup-leave-active {
-        transition: all .3s ease;
+        transition: all .2s ease;
     }
 
     .popup-enter, .popup-leave-active {

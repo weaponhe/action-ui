@@ -2,7 +2,7 @@
     <div class="menu-group">
         <v-menu-item :title="title"
                      :path="path"
-                     :expandable="true"
+                     :expandable="expandable"
                      :expanded="expanded"
                      @expand="expanded = !expanded">
 
@@ -25,7 +25,11 @@
     },
     props: {
       title: String,
-      path: [String, Object]
+      path: [String, Object],
+      expandable: {
+        type: Boolean,
+        default: true
+      }
     }
 //    data() {
 //      return {
