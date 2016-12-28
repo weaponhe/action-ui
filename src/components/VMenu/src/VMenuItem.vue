@@ -1,4 +1,4 @@
-<template scope="props">
+<template>
     <div class="menu-item"
          :class="{disable:path===undefined}"
          :is="tag"
