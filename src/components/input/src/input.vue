@@ -1,6 +1,12 @@
 <template>
     <div class="wrapper">
-        <input :type='type'
+        <input v-if="type==='date'"
+               type='date'
+               :disabled="disabled"
+               :class="{['size-'+size]:size}"
+               v-model="vModelValue">
+        <input v-else
+               type='text'
                :disabled="disabled"
                :placeholder="placeholder"
                :class="{['size-'+size]:size}"
