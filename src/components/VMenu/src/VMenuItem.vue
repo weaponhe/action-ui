@@ -26,60 +26,17 @@
       title: String,
       path: [String, Object],
       expandable: Boolean,
-      expanded: Boolean
+      expanded: Boolean,
+      router: {
+        type: Boolean,
+        default: true
+      }
     },
     computed: {
-      root(){
-        //保存verticalMenu节点
-        let parent = this.$parent
-        while (parent && parent.$options.name !== 'VMenu') {
-          parent = parent.$parent
-        }
-        return parent
-      },
-      router(){
-        return this.root.router
-      },
       tag(){
         return this.path ? this.router ? 'router-link' : 'a' : 'div'
       }
     }
-//    watch: {
-//      active(newActive){
-//        if (newActive) {
-//          let parentItem = this.$parent.$parent
-//          if (parentItem.$options.name === 'menuItem') {
-//            parentItem.active = true
-//          }
-//        }
-//      }
-//    },
-//    methods: {
-//      handleClick(){
-//        if (this.isLeaf) {
-//          //叶子节点，改变根节点存储的状态
-//          if (!this.active) {
-//            this.root.changeActiveIndex(this.index)
-//          }
-//        } else {
-//          //中间节点，只改变状态
-//          this.active = !this.active
-//        }
-//      }
-//    },
-//    mounted(){
-//      this.isLeaf = !(this.$slots && this.$slots.default)
-//      if (this.isLeaf) {
-//        this.index = this.root.leafList.length
-//        this.root.leafList.push(this)
-//        if (this.data.active) {
-//          this.root.changeActiveIndex(this.index)
-//        }
-//      } else {
-//        this.index = this.root.branchList.length
-//        this.root.branchList.push(this)
-//      }
-//    }
   }
 </script>
 

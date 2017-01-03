@@ -1,14 +1,11 @@
 <template>
-    <!--<transition name="message">-->
-    <!--<div v-if="messageList[0]"-->
-    <!--class="message"-->
-    <!--:class="messageList[0].type">-->
-    <!--<span class="content">{{messageList[0].text}}</span>-->
-    <!--</div>-->
-    <!--</transition>-->
-    <div>
-        <div v-for="msg in messageList">{{msg}}</div>
-    </div>
+    <transition name="message">
+        <div v-if="messageList[0]"
+             class="message"
+             :class="messageList[0].type">
+            <span class="content">{{messageList[0].text}}</span>
+        </div>
+    </transition>
 </template>
 
 <script type="text/ecmascript-6">

@@ -7,13 +7,7 @@
 
 <script>
   export default {
-    name: 'VMenu',
-    props: {
-      router: {
-        type: Boolean,
-        default: false
-      }
-    }
+    name: 'VMenu'
   }
 </script>
 
