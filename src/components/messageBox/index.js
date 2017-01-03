@@ -1,7 +1,8 @@
-let MessageBox = require('./src/messageBox.vue')
+import MessageBox from './src/messageBox.vue'
 
-MessageBox.install = function (Vue) {
-    Vue.component(MessageBox.name, MessageBox)
+MessageBox.install = function (Vue)
+{
+  Vue.component(MessageBox.name, MessageBox)
 }
 
 module.exports = MessageBox

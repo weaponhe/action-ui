@@ -13,6 +13,8 @@ import Input from './components/input'
 import Checkbox from './components/checkbox'
 import Select from './components/select'
 
+import Mixin from './components/mixin'
+
 let install = function (Vue)
 {
   Vue.use(Button)
@@ -46,5 +48,7 @@ module.exports = {
   Icon,
   Input,
   Checkbox,
-  Select
+  Select,
+
+  Mixin
 }
