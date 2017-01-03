@@ -44,7 +44,7 @@
   export default {
     name: 'messageBox',
     mixins: [mixin.ModelMixin],
-    components: {popup, acButton},
+    components: {popup, acButton, icon},
     props: {
       title: String,
       showCloseIcon: {

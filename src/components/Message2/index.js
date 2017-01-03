@@ -1,0 +1,45 @@
+import MessageComponent from './src/Message.vue'
+
+module.exports.install = function (Vue)
+{
+  const inBrowser = typeof window !== 'undefined'
+
+  let Message = {
+    $vm: null,
+    init (vm) {
+      this.$vm = vm
+    },
+    add(msgObj){
+      let messageList = this.$vm.Message.messageList
+
+      messageList.push(msgObj)
+      setTimeout(() =>
+      {
+        messageList.splice(0, 1, null)
+        Vue.nextTick(() =>
+        {
+          messageList.shift()
+        })
+      }, 2000 * messageList.length)
+    }
+  }
+
+  // const progressOptions = Object.assign(DEFAULT_OPTION, options)
+
+  const VueMessageEventBus = new Vue({
+    data: {
+      Message: {
+        messageList: []
+      }
+    }
+  })
+
+  if (inBrowser) {
+    window.VueMessageEventBus = VueMessageEventBus
+    Message.init(VueMessageEventBus)
+  }
+
+  Vue.component('message', MessageComponent)
+
+  Vue.prototype.$Message = Message
+}
