@@ -11,7 +11,9 @@ module.exports.install = function (Vue)
     },
     add(msgObj){
       let messageList = this.$vm.Message.messageList
-
+      if (typeof msgObj === 'string') {
+        msgObj = {type: 'success', text: msgObj}
+      }
       messageList.push(msgObj)
       setTimeout(() =>
       {

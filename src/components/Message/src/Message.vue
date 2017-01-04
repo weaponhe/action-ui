@@ -21,9 +21,11 @@
   }
 </script>
 
-<style>
+<style scoped lang="less" rel="stylesheet/less">
+
     .message {
         position: fixed;
+        z-index: 100000;
         top: 0;
         left: 50%;
         transform: translate3d(-50%, 0, 0);
