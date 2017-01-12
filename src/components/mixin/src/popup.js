@@ -12,10 +12,10 @@ module.exports = {
     }
   },
   props: {
-    open: {
-      type: Boolean,
-      default: false
-    },
+    // open: {
+    //   type: Boolean,
+    //   default: false
+    // },
     modal: {
       type: Boolean,
       default: false
@@ -29,7 +29,7 @@ module.exports = {
     }
   },
   watch: {
-    open(open) {
+    vModelValue(open) {
       if (open) {
         this.popupIndex = ++this.global.popupOpenCount
         this.modal && this.global.modalArray.push(this.popupIndex)

@@ -3,6 +3,7 @@ import AppBar from './components/appBar'
 import VMenu from './components/VMenu'
 import Tooltip from './components/tooltip'
 import Popup from './components/popup'
+import Mask from './components/Mask'
 import Message from './components/Message'
 import MessageBox from './components/messageBox'
 import Alert from './components/alert'
@@ -22,6 +23,7 @@ let install = function (Vue)
   Vue.use(VMenu)
   Vue.use(Tooltip)
   Vue.use(Popup)
+  Vue.use(Mask)
   Vue.use(Message)
   Vue.use(MessageBox)
   Vue.use(Alert)
@@ -40,6 +42,7 @@ module.exports = {
   VMenu,
   Tooltip,
   Popup,
+  Mask,
   Message,
   MessageBox,
   Alert,
