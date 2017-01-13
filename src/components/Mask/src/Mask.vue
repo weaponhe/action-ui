@@ -1,10 +1,12 @@
 <template>
-    <div class="mask"
-         v-if="vModelValue"
-         :style="{zIndex:popupIndex,backgroundColor: transparent}"
-         @click.self="handleClick">
-        <slot></slot>
-    </div>
+    <transition name="mask">
+        <div class="mask"
+             v-if="vModelValue"
+             :style="{zIndex:popupIndex,backgroundColor: transparent}"
+             @click.self="handleClick">
+            <slot></slot>
+        </div>
+    </transition>
 </template>
 <script>
   import mixin from '../../mixin'
@@ -38,6 +40,15 @@
         width: 100%;
         height: 100%;
         background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .mask-enter-active, .mask-leave-active {
+        transition: all .2s ease;
+    }
+
+    .mask-enter, .mask-leave-active {
+        opacity: 0;
+        transform: scale(1.1);
     }
 
 </style>

@@ -1,50 +1,46 @@
 <template>
-    <transition name="popup">
-        <popup v-if="vModelValue"
-               :open="vModelValue"
-               modal
-               @close="close">
+    <ac-mask v-model="vModelValue"
+             @close="close">
 
-            <div class="wrapper">
+        <div class="wrapper">
 
-                <div class="header">
-                    <slot name="header">
-                        <h3>
-                            <span class="title">{{title}}</span>
-                            <span v-if="showCloseIcon" class="close" @click="close">
+            <div class="header">
+                <slot name="header">
+                    <h3>
+                        <span class="title">{{title}}</span>
+                        <span v-if="showCloseIcon" class="close" @click="close">
                                 <icon name="error" :size="20"></icon>
                               </span>
-                        </h3>
-                    </slot>
-                </div>
-
-                <div class="main">
-                    <slot>
-                    </slot>
-                </div>
-
-                <div class="footer">
-                    <slot name="footer">
-                        <ac-button v-if="showOKButton" type="success" @click="ok">确定</ac-button>
-                        <ac-button v-if="showCancelButton" @click="close">取消</ac-button>
-                    </slot>
-                </div>
-
+                    </h3>
+                </slot>
             </div>
-        </popup>
-    </transition>
+
+            <div class="main">
+                <slot>
+                </slot>
+            </div>
+
+            <div class="footer">
+                <slot name="footer">
+                    <ac-button v-if="showOKButton" type="success" @click="ok">确定</ac-button>
+                    <ac-button v-if="showCancelButton" @click="close">取消</ac-button>
+                </slot>
+            </div>
+
+        </div>
+    </ac-mask>
 </template>
 
 <script>
-  import popup from '../../popup'
+  import AcMask from '../../Mask'
   import icon from '../../icon'
-  import acButton from '../../button'
+  import AcButton from '../../button'
   import mixin from '../../mixin'
 
   export default {
     name: 'messageBox',
     mixins: [mixin.ModelMixin],
-    components: {popup, acButton, icon},
+    components: {AcMask, AcButton, icon},
     props: {
       title: String,
       showCloseIcon: {
@@ -108,14 +104,5 @@
             padding: 20px;
             text-align: right;
         }
-    }
-
-    .popup-enter-active, .popup-leave-active {
-        transition: all .2s ease;
-    }
-
-    .popup-enter, .popup-leave-active {
-        opacity: 0;
-        transform: scale(1.1);
     }
 </style>

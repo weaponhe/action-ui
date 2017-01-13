@@ -9,7 +9,6 @@ module.exports = {
     VMenu: './src/components/VMenu',
     appBar: './src/components/appBar',
     tooltip: './src/components/tooltip',
-    popup: './src/components/popup',
     message: './src/components/message',
     messageBox: './src/components/messageBox',
     alert: './src/components/alert',
