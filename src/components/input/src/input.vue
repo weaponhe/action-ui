@@ -11,7 +11,7 @@
                :placeholder="placeholder"
                :class="{['size-'+size]:size}"
                v-model="vModelValue"
-               :autofocus="autofocus">
+               ref="text">
     </div>
 </template>
 
@@ -36,6 +36,9 @@
       },
       placeholder: String,
       autofocus: Boolean
+    },
+    mounted(){
+      this.autofocus && this.$refs.text && this.$refs.text.focus()
     }
   }
 </script>
