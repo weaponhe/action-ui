@@ -1,7 +1,7 @@
 {
   "name": "action-ui",
   "description": "A component library powered by Vue.js",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "author": "weapon <weaponhe@126.com>",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/dev.config.js --progress  --open --inline --hot",
