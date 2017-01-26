@@ -33,7 +33,7 @@ let install = function (Vue)
   Vue.use(Select)
 }
 
-module.exports = {
+export default {
   install,
   AppBar,
   Button,

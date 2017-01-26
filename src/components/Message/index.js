@@ -1,6 +1,6 @@
 import MessageComponent from './src/Message.vue'
 
-module.exports.install = function (Vue)
+export default function install(Vue)
 {
   const inBrowser = typeof window !== 'undefined'
 

@@ -5,5 +5,5 @@ MessageBox.install = function (Vue)
   Vue.component(MessageBox.name, MessageBox)
 }
 
-module.exports = MessageBox
+export default MessageBox
 
