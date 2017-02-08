@@ -12,6 +12,7 @@ import Icon from './components/icon'
 import Input from './components/input'
 import Checkbox from './components/checkbox'
 import Select from './components/select'
+import Datepicker from './components/Datepicker'
 
 import Mixin from './components/mixin'
 
@@ -31,6 +32,7 @@ let install = function (Vue)
   Vue.use(Input)
   Vue.use(Checkbox)
   Vue.use(Select)
+  Vue.use(Datepicker)
 }
 
 export default {
