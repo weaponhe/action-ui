@@ -1,7 +1,9 @@
 <template>
     <div class="date-picker">
         <div class="input-wrapper" @mouseenter="showCancel = true" @mouseleave="showCancel = false">
-            <div class="input" @click="togglePanel" v-text="range ? value[0] + ' -- ' + value[1] : value">
+            <div class="input"
+                 v-text="range ? value[0] + ' -- ' + value[1] : value"
+                 @click="togglePanel">
             </div>
             <transition name="fade">
                 <img class="cancel-btn" src="./cancel.png" v-show="showCancel" @click="clear">
@@ -436,29 +438,27 @@
 
     .date-picker {
         position: relative;
-        height: 32px;
     }
 
     .input-wrapper {
-        border: 1px solid #ccc;
-        border-radius: 2px;
-        vertical-align: middle;
         display: flex;
         justify-content: space-between;
         flex-flow: row nowrap;
         align-items: center;
-        padding: 6px 10px 6px 4px;
-        height: 32px;
+        height: 36px;
+        padding: 3px 10px;
         box-sizing: border-box;
+        border: 1px solid #c0ccda;
+        border-radius: 4px;
+        transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+        font-size: 14px;
+        margin: 10px 0;
     }
 
     .input {
         height: 100%;
+        /*line-height: 28px;*/
         width: 100%;
-        font-size: inherit;
-        padding-left: 4px;
-        box-sizing: border-box;
-        outline: none;
     }
 
     .cancel-btn {
