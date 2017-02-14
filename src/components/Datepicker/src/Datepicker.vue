@@ -81,9 +81,10 @@
       let now = new Date()
       return {
         showCancel: false,//cancel按钮的显示
-        panelState: false,
-        panelType: 'date',
-        coordinates: {},
+        panelState: false,//选择面板的显示
+        panelType: 'date',//选择面板的类型
+        coordinates: {},//?
+
         year: now.getFullYear(),
         month: now.getMonth(),
         date: now.getDate(),
@@ -95,12 +96,14 @@
         tmpEndYear: now.getFullYear(),
         tmpEndMonth: now.getMonth(),
         tmpEndDate: now.getDate(),
+
         minYear: Number,
         minMonth: Number,
         minDate: Number,
         maxYear: Number,
         maxMonth: Number,
         maxDate: Number,
+
         yearList: Array.from({length: 12}, (value, index) => new Date().getFullYear() + index),
         monthList: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         weekList: [0, 1, 2, 3, 4, 5, 6],
@@ -331,6 +334,7 @@
     computed: {
       dateList () {
         let currentMonthLength   = new Date(this.tmpYear, this.tmpMonth + 1, 0).getDate()
+
         let dateList             = Array.from({length: currentMonthLength}, (val, index) =>
         {
           return {
@@ -444,24 +448,22 @@
         display: flex;
         justify-content: space-between;
         flex-flow: row nowrap;
-        align-items: center;
-        height: 36px;
+        margin: 10px 0;
         padding: 3px 10px;
-        box-sizing: border-box;
+        height: 28px;
+        line-height: 28px;
         border: 1px solid #c0ccda;
         border-radius: 4px;
         transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
         font-size: 14px;
-        margin: 10px 0;
     }
 
     .input {
-        height: 100%;
-        /*line-height: 28px;*/
-        width: 100%;
+        flex: 1;
     }
 
     .cancel-btn {
+        align-self: center;
         height: 14px;
         width: 14px;
     }
@@ -469,19 +471,16 @@
     .date-panel {
         position: absolute;
         z-index: 5000;
-        border: 1px solid #eee;
         box-sizing: border-box;
+        border: 1px solid #eee;
         width: 320px;
         padding: 5px 10px 10px;
-        box-sizing: border-box;
         background-color: #fff;
-        transform: translateY(4px);
     }
 
     .panel-header {
         display: flex;
         flex-flow: row nowrap;
-        width: 100%;
     }
 
     .arrow-left, .arrow-right {
