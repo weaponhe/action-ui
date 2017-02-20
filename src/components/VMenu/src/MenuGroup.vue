@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import VMenuItem from './VMenuItem.vue'
+  import VMenuItem from './MenuItem.vue'
   export default {
     name: 'VMenuGroup',
     components: {VMenuItem},

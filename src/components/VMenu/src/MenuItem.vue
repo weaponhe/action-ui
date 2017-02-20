@@ -1,6 +1,6 @@
 <template>
     <div class="menu-item"
-         :class="{disable:path===undefined}"
+         :class="{disable:path===undefined,autoActive}"
          :is="tag"
          :to="path"
          :href="'#'+path?path:''"
@@ -28,6 +28,10 @@
       expandable: Boolean,
       expanded: Boolean,
       router: {
+        type: Boolean,
+        default: true
+      },
+      autoActive: {
         type: Boolean,
         default: true
       }
@@ -58,7 +62,7 @@
             background-color: #ddd;
             cursor: pointer;
         }
-        &.router-link-active {
+        &.autoActive.router-link-active {
             border-color: #4fc08d;
             color: #4fc08d;
         }

@@ -1,12 +1,12 @@
-let VMenu      = require('./src/VMenu.vue')
-let VMenuItem  = require('./src/VMenuItem.vue')
-let VMenuGroup = require('./src/VMenuGroup.vue')
+import Menu from './src/Menu.vue'
+import MenuItem from './src/MenuItem.vue'
+import MenuGroup from './src/MenuGroup.vue'
 
-VMenu.install = function (Vue)
+Menu.install = function install(Vue)
 {
-  Vue.component(VMenu.name, VMenu)
-  Vue.component(VMenuItem.name, VMenuItem)
-  Vue.component(VMenuGroup.name, VMenuGroup)
+  Vue.component(Menu.name, Menu)
+  Vue.component(MenuItem.name, MenuItem)
+  Vue.component(MenuGroup.name, MenuGroup)
 }
 
-module.exports = VMenu
+export default Menu
