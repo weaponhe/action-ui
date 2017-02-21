@@ -1,7 +1,7 @@
 {
   "name": "action-ui",
   "description": "A component library powered by Vue.js",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "author": "weapon <weaponhe@126.com>",
   "main": "./src/main.js"
 }
