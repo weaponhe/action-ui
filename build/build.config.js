@@ -4,7 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
   entry: {
-    icon: './src/components/icon',
+    icon: './src/components/Icon',
     button: './src/components/button',
     VMenu: './src/components/VMenu',
     appBar: './src/components/appBar',

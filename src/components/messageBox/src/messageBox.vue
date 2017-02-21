@@ -33,7 +33,7 @@
 
 <script>
   import AcMask from '../../Mask'
-  import icon from '../../icon'
+  import icon from '../../Icon'
   import AcButton from '../../button'
   import mixin from '../../mixin'
 
