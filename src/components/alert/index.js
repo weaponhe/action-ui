@@ -1,4 +1,4 @@
-let Alert = require('./src/alert.vue')
+import Alert from './src/alert.vue'
 
 Alert.install = function (Vue)
 {

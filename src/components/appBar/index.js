@@ -1,4 +1,4 @@
-let AppBar = require('./src/appBar.vue')
+import AppBar from './src/appBar.vue'
 
 AppBar.install = function (Vue) {
     Vue.component(AppBar.name, AppBar)

@@ -1,7 +1,8 @@
-let Button = require('./src/button.vue');
+import Button from './src/button.vue'
 
-Button.install = function (Vue) {
-    Vue.component(Button.name, Button)
+Button.install = function (Vue)
+{
+  Vue.component(Button.name, Button)
 }
 
 module.exports = Button

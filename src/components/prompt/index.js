@@ -1,4 +1,4 @@
-let Prompt = require('./src/prompt.vue')
+import Prompt from './src/prompt.vue'
 
 
 Prompt.install = function (Vue) {

@@ -1,4 +1,4 @@
-let Datepicker = require('./src/Datepicker.vue')
+import Datepicker from './src/Datepicker.vue'
 
 Datepicker.install = function (Vue)
 {
