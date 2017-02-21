@@ -2,7 +2,7 @@ import MessageComponent from './src/Message.vue'
 
 export default function install(Vue)
 {
-  const inBrowser = typeof window !== 'undefined'
+  var inBrowser = typeof window !== 'undefined'
 
   var Message = {
     $vm: null,
@@ -17,7 +17,7 @@ export default function install(Vue)
         msgObj = {type: 'success', text: msgObj}
       }
       messageList.push(msgObj)
-      setTimeout(() =>
+      setTimeout(function ()
       {
         messageList.splice(0, 1, null)
         Vue.nextTick(function ()
