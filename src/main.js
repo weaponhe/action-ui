@@ -36,21 +36,22 @@ let install = function (Vue)
 }
 
 export default {
-  install,
-  AppBar,
-  Button,
-  VMenu,
-  Tooltip,
-  Mask,
-  Message,
-  MessageBox,
-  Alert,
-  Confirm,
-  Prompt,
-  Icon,
-  Input,
-  Checkbox,
-  Select,
+  install: install,
+  AppBar: AppBar,
+  Button: Button,
+  VMenu: VMenu,
+  Tooltip: Tooltip,
+  Mask: Mask,
+  Message: Message,
+  MessageBox: MessageBox,
+  Alert: Alert,
+  Confirm: Confirm,
+  Prompt: Prompt,
+  Icon: Icon,
+  Input: Input,
+  Checkbox: Checkbox,
+  Select: Select,
 
-  Mixin
+  Mixin: Mixin
+
 }

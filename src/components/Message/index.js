@@ -4,13 +4,15 @@ export default function install(Vue)
 {
   const inBrowser = typeof window !== 'undefined'
 
-  let Message = {
+  var Message = {
     $vm: null,
-    init (vm) {
+    init: function (vm)
+    {
       this.$vm = vm
     },
-    add(msgObj){
-      let messageList = this.$vm.Message.messageList
+    add: function (msgObj)
+    {
+      var messageList = this.$vm.Message.messageList
       if (typeof msgObj === 'string') {
         msgObj = {type: 'success', text: msgObj}
       }
@@ -18,7 +20,7 @@ export default function install(Vue)
       setTimeout(() =>
       {
         messageList.splice(0, 1, null)
-        Vue.nextTick(() =>
+        Vue.nextTick(function ()
         {
           messageList.shift()
         })
@@ -28,7 +30,7 @@ export default function install(Vue)
 
   // const progressOptions = Object.assign(DEFAULT_OPTION, options)
 
-  const VueMessageEventBus = new Vue({
+  var VueMessageEventBus = new Vue({
     data: {
       Message: {
         messageList: []
