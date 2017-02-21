@@ -1,4 +1,4 @@
-import Icon from './src/icon.vue'
+var Icon = require('./src/icon.vue')
 
 Icon.install = function (Vue)
 {

@@ -1,7 +1,8 @@
-import Checkbox from './src/Checkbox.vue'
+var Checkbox = require('./src/Checkbox.vue')
 
-Checkbox.install = function (Vue) {
-    Vue.component(Checkbox.name, Checkbox)
+Checkbox.install = function (Vue)
+{
+  Vue.component(Checkbox.name, Checkbox)
 }
 
 module.exports = Checkbox

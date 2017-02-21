@@ -1,4 +1,4 @@
-import Button from './src/button.vue'
+var Button = require('./src/button.vue')
 
 Button.install = function (Vue)
 {

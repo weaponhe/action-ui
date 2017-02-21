@@ -1,4 +1,4 @@
-import Input from './src/input.vue'
+var Input = require('./src/input.vue')
 
 Input.install = function (Vue)
 {
