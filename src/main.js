@@ -16,7 +16,7 @@ import Datepicker from './components/Datepicker'
 
 import Mixin from './components/mixin'
 
-let install = function (Vue)
+var install = function (Vue)
 {
   Vue.use(Button)
   Vue.use(AppBar)
