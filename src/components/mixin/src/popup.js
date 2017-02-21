@@ -1,14 +1,15 @@
-let global = {
+let global     = {
   popupOpenCount: 0,
   popupCloseCount: 0,
   modalArray: []
 }
 module.exports = {
-  data() {
+  data: function ()
+  {
     return {
       popupIndex: 0,
       modalIndex: 0,
-      global
+      global: global
     }
   },
   props: {
@@ -21,7 +22,8 @@ module.exports = {
       default: false
     }
   },
-  mounted() {
+  mounted: function ()
+  {
     if (this.open) {
       // console.log('%s %d', this.$options.name, this.popupIndex)
       this.popupIndex = ++this.global.popupOpenCount
@@ -29,13 +31,14 @@ module.exports = {
     }
   },
   watch: {
-    vModelValue(open) {
+    vModelValue: function (open)
+    {
       if (open) {
         this.popupIndex = ++this.global.popupOpenCount
         this.modal && this.global.modalArray.push(this.popupIndex)
       } else {
         this.global.popupCloseCount++
-          this.modal && this.global.modalArray.splice(this.global.modalArray.indexOf(this.popupIndex), 1)
+        this.modal && this.global.modalArray.splice(this.global.modalArray.indexOf(this.popupIndex), 1)
       }
 
       if (this.global.popupOpenCount === this.global.popupCloseCount) {
@@ -44,7 +47,8 @@ module.exports = {
     }
   },
   computed: {
-    transparent() {
+    transparent: function ()
+    {
       return this.modal && this.popupIndex !== this.global.modalArray[this.global.modalArray.length - 1] ? 'transparent' : ''
     }
   }
