@@ -1,4 +1,4 @@
-let global     = {
+var global     = {
   popupOpenCount: 0,
   popupCloseCount: 0,
   modalArray: []
